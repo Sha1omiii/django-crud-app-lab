@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Detail</title>
+</head>
+<body>
+    <h1>{{ dog.name }}</h1>
+    <p>Breed: {{ dog.breed }}</p>
+    <p>Age: {{ dog.age }}</p>
+    <p>Owner: 
+        {% if dog.owner %}
+            <a href="{% url 'owner_detail' dog.owner.id %}">{{ dog.owner.name }}</a>
+        {% else %}
+            No owner assigned
+        {% endif %}
+    </p>
+    <a href="{% url 'update_dog' dog.id %}">Edit Dog</a>
+    <a href="{% url 'delete_dog' dog.id %}">Delete Dog</a>
+    <a href="{% url 'index' %}">Back to Dogs List</a>
+</body>
+</html>

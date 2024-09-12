@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog Collector</title>
+</head>
+<body>
+    <h1>Welcome to Dog Collector</h1>
+    
+    <p>Manage your dogs, owners, and toys easily!</p>
+
+    <!-- Link to create a new dog -->
+    <a href="{% url 'create_dog' %}">Create a New Dog</a>
+
+    <p>
+        <a href="{% url 'index' %}">View All Dogs</a><br>
+        <a href="{% url 'owner_index' %}">View All Owners</a><br>
+        <a href="{% url 'toy_index' %}">View All Toys</a>
+    </p>
+</body>
+</html>

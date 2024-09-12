@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Dogs</title>
+</head>
+<body>
+    <h1>All Dogs</h1>
+
+    <p><a href="{% url 'create_dog' %}">Create a New Dog</a></p>
+
+    <ul>
+        {% for dog in dogs %}
+            <li>
+                <a href="{% url 'detail' dog.id %}">{{ dog.name }}</a>
+                (Age: {{ dog.age }} - Breed: {{ dog.breed }})
+            </li>
+        {% empty %}
+            <li>No dogs available.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if owner %}Update{% else %}Create{% endif %} Owner</title>
+</head>
+<body>
+    <h1>{% if owner %}Update{% else %}Create{% endif %} Owner</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if owner %}Update{% else %}Create{% endif %}</button>
+    </form>
+    <a href="{% url 'owner_index' %}">Back to Owners List</a>
+</body>
+</html>
